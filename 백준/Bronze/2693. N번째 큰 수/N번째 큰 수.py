@@ -1,11 +1,16 @@
-# list.sort() 함수 : 리스트를 오름차순으로 정렬 (문자열, 숫자 가능)
-# list.sort(reverse=False) : 매개변수를 reverse=False로 지정하면 내림차순으로 정렬
+# n: 입력받을 배열의 개수
+n = int(input(''))
 
-# 길이가 10인 배열(list) A 입력받기
+num = []
 
-x = int(input())
-for i in range(x):
-  A = list(map(int, input().split()))
-  A.sort()
-  # A 리스트에서 3번째로 큰 수(역순)를 출력
-  print(A[-3])
+for i in range(n):
+    A = list(map(int, input('').split()))
+    # A리스트에서 가장 큰 값을 2번 반복하여 삭제
+    for j in range(2):
+        A.remove(max(A))
+
+    # A리스트에서 3번째로 큰 값을 num 배열에 추가
+    num.append(max(A))
+
+for i in range(n):
+    print(num[i])
